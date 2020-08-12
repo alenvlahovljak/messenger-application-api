@@ -1,0 +1,40 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon src/index.js",
+		"test": "./node_modules/.bin/env-cmd -f ./config/test.env jest --watchAll --runInBand"
+	},
+	"author": "Alen Vlahovljak",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^5.9.25",
+		"multer": "^1.4.2",
+		"sharp": "^0.25.4",
+		"socket.io": "^2.3.0"
+	},
+	"devDependencies": {
+		"env-cmd": "^10.1.0",
+		"jest": "^26.1.0",
+		"supertest": "^4.0.2"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"**/*.{js}",
+			"!**/node_modules/**"
+		],
+		"coverageDirectory": "./coverage"
+	},
+	"engines": {
+		"node": "10.x"
+	}
+}
